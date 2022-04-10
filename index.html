@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+        a {
+            margin-left: 40%;
+            background-color: blanchedalmond;
+            padding: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 20px;
+            color: black;
+        }
+        p {
+            background-color: blanchedalmond;
+            font-size: 20px;
+          max-width:70px ;
+            padding: 5px;
+            margin-left: 40%;
+        }
+        a:hover {
+            background-color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="btn">Click Here To Change Background Color</a>
+    <p id="color"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        let myParagragh = document.getElementById("color");
+
+        btn.onclick = function() {
+            let randomHexa = () => Math.floor(Math.random()*16).toString(16);
+            let randomColor = () => '#'+Array.from({length:6}).map(randomHexa).join("");
+            let color = randomColor();
+            document.body.style.backgroundColor = `${color}`;
+            myParagragh.innerHTML = `${color}`;
+        }
+
+
+    </script>
+</body>
+</html>
